@@ -35,7 +35,12 @@ dependencies {
     implementation "android.arch.navigation:navigation-ui:$nav_version"
     implementation "android.arch.navigation:navigation-ui-ktx:$nav_version"
 
+    implementation 'com.google.firebase:firebase-core:16.0.9'
+    implementation 'com.google.firebase:firebase-ml-vision:20.0.0'
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 }
+
+apply plugin: 'com.google.gms.google-services'
