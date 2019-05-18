@@ -22,5 +22,8 @@ class MainFragment : Fragment() {
         textRecognitionButton.setOnClickListener {
             findNavController().navigate(R.id.action_mainFragment_to_textRecognitionFragment)
         }
+        faceDetectionButton.setOnClickListener {
+            findNavController().navigate(R.id.action_mainFragment_to_faceDetectionFragment)
+        }
     }
 }

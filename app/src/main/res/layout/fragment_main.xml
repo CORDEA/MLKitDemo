@@ -11,8 +11,21 @@
         android:id="@+id/textRecognitionButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:text="@string/text_recognition"
+        app:layout_constraintBottom_toTopOf="@id/faceDetectionButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/faceDetectionButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/face_detection"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textRecognitionButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>

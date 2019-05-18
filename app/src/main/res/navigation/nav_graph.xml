@@ -8,14 +8,21 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="jp.cordea.mlkitdemo.MainFragment"
-        tools:layout="@layout/fragment_main" >
+        tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment_to_textRecognitionFragment"
             app:destination="@id/textRecognitionFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_faceDetectionFragment"
+            app:destination="@id/faceDetectionFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/textRecognitionFragment"
         android:name="jp.cordea.mlkitdemo.TextRecognitionFragment"
         tools:layout="@layout/fragment_text_recognition" />
+    <fragment
+        android:id="@+id/faceDetectionFragment"
+        android:name="jp.cordea.mlkitdemo.FaceDetectionFragment"
+        tools:layout="@layout/fragment_face_detection" />
 </navigation>
