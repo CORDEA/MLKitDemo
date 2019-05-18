@@ -15,6 +15,9 @@
         <action
             android:id="@+id/action_mainFragment_to_faceDetectionFragment"
             app:destination="@id/faceDetectionFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_barcodeScanningFragment"
+            app:destination="@id/barcodeScanningFragment" />
     </fragment>
 
     <fragment
@@ -25,4 +28,8 @@
         android:id="@+id/faceDetectionFragment"
         android:name="jp.cordea.mlkitdemo.FaceDetectionFragment"
         tools:layout="@layout/fragment_face_detection" />
+    <fragment
+        android:id="@+id/barcodeScanningFragment"
+        android:name="jp.cordea.mlkitdemo.BarcodeScanningFragment"
+        tools:layout="@layout/fragment_barcode_scanning" />
 </navigation>

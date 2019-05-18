@@ -25,5 +25,8 @@ class MainFragment : Fragment() {
         faceDetectionButton.setOnClickListener {
             findNavController().navigate(R.id.action_mainFragment_to_faceDetectionFragment)
         }
+        barcodeScanningButton.setOnClickListener {
+            findNavController().navigate(R.id.action_mainFragment_to_barcodeScanningFragment)
+        }
     }
 }

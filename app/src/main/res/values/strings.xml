@@ -3,6 +3,7 @@
 
     <string name="text_recognition">Text recognition</string>
     <string name="face_detection">Face detection</string>
+    <string name="barcode_scanning">Barcode Scanning</string>
     <string name="choose_button">Choose</string>
 
     <!-- TODO: Remove or change this placeholder text -->
