@@ -28,11 +28,7 @@ class TextRecognitionFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         chooseButton.setOnClickListener {
-            val intent = Intent(Intent.ACTION_GET_CONTENT).apply {
-                addCategory(Intent.CATEGORY_OPENABLE)
-                type = "image/*"
-            }
-            startActivityForResult(Intent.createChooser(intent, "Choose picture"), REQUEST_CODE)
+            startActivityForResult(createImageChooserIntent(), REQUEST_CODE)
         }
     }
 
