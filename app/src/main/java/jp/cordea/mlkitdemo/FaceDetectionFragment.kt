@@ -10,6 +10,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import com.google.firebase.ml.vision.FirebaseVision
 import com.google.firebase.ml.vision.common.FirebaseVisionImage
@@ -49,9 +50,15 @@ class FaceDetectionFragment : Fragment() {
     }
 
     private fun handleImage(uri: Uri) {
+        progressBar.isVisible = true
+        contentGroup.isVisible = false
         val image = FirebaseVisionImage.fromFilePath(requireContext(), uri)
         val detector = FirebaseVision.getInstance().visionFaceDetector
         detector.detectInImage(image)
+            .addOnCompleteListener {
+                progressBar.isVisible = false
+                contentGroup.isVisible = true
+            }
             .addOnSuccessListener { result ->
                 drawBoundingBox(image, result.map { it.boundingBox })
             }
