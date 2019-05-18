@@ -2,9 +2,6 @@ package jp.cordea.mlkitdemo
 
 import android.app.Activity
 import android.content.Intent
-import android.graphics.Canvas
-import android.graphics.Paint
-import android.graphics.Rect
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -60,27 +57,10 @@ class FaceDetectionFragment : Fragment() {
                 contentGroup.isVisible = true
             }
             .addOnSuccessListener { result ->
-                drawBoundingBox(image, result.map { it.boundingBox })
+                resultView.drawBoundingBox(image, result.map { it.boundingBox })
             }
             .addOnFailureListener {
                 it.printStackTrace()
             }
-    }
-
-    private fun drawBoundingBox(image: FirebaseVisionImage, boxes: List<Rect>) {
-        val paint = Paint().apply {
-            color = requireContext().getColor(R.color.colorAccent)
-            style = Paint.Style.STROKE
-            strokeWidth = 2.0f
-        }
-        val bitmap = image.bitmap
-        val canvas = Canvas()
-        val rect = Rect(0, 0, bitmap.width, bitmap.height)
-        canvas.drawBitmap(bitmap, rect, rect, null)
-        bitmap.recycle()
-        boxes.forEach {
-            canvas.drawRect(it, paint)
-        }
-        resultView.draw(canvas)
     }
 }
