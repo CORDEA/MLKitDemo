@@ -11,10 +11,13 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.google.firebase.ml.vision.FirebaseVision
 import com.google.firebase.ml.vision.common.FirebaseVisionImage
+import com.xwray.groupie.GroupAdapter
+import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.fragment_image_labeling.*
 
 class ImageLabelingFragment : Fragment() {
     private val uiBinder = ImageChoosableUiBinder(this)
+    private val groupAdapter = GroupAdapter<ViewHolder>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,6 +33,8 @@ class ImageLabelingFragment : Fragment() {
             }
         })
         uiBinder.bind(chooseButton)
+
+        recyclerView.adapter = groupAdapter
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -43,6 +48,10 @@ class ImageLabelingFragment : Fragment() {
 
         labeler.processImage(image)
             .addOnSuccessListener { result ->
+                groupAdapter.clear()
+                groupAdapter.addAll(
+                    result.map { ImageLabelingItem(ImageLabelingItemModel(it.text)) }
+                )
             }
             .addOnFailureListener { it.printStackTrace() }
     }
