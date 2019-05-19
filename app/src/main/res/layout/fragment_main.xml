@@ -34,9 +34,20 @@
         android:id="@+id/barcodeScanningButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:text="@string/barcode_scanning"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/imageLabelingButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/faceDetectionButton" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/imageLabelingButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/image_labeling"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/barcodeScanningButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>

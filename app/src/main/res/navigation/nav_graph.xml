@@ -18,6 +18,9 @@
         <action
             android:id="@+id/action_mainFragment_to_barcodeScanningFragment"
             app:destination="@id/barcodeScanningFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_imageLabelingFragment"
+            app:destination="@id/imageLabelingFragment" />
     </fragment>
 
     <fragment
@@ -32,4 +35,8 @@
         android:id="@+id/barcodeScanningFragment"
         android:name="jp.cordea.mlkitdemo.BarcodeScanningFragment"
         tools:layout="@layout/fragment_barcode_scanning" />
+    <fragment
+        android:id="@+id/imageLabelingFragment"
+        android:name="jp.cordea.mlkitdemo.ImageLabelingFragment"
+        tools:layout="@layout/fragment_image_labeling" />
 </navigation>

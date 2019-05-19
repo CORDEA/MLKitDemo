@@ -28,5 +28,8 @@ class MainFragment : Fragment() {
         barcodeScanningButton.setOnClickListener {
             findNavController().navigate(R.id.action_mainFragment_to_barcodeScanningFragment)
         }
+        imageLabelingButton.setOnClickListener {
+            findNavController().navigate(R.id.action_mainFragment_to_imageLabelingFragment)
+        }
     }
 }
