@@ -7,6 +7,15 @@
     android:padding="16dp"
     tools:context=".ObjectDetectionAndTrackingFragment">
 
+    <jp.cordea.mlkitdemo.ObjectDetectionAndTrackingView
+        android:id="@+id/resultView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/chooseButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/chooseButton"
         android:layout_width="0dp"
