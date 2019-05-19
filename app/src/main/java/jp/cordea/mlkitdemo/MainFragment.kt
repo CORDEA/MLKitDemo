@@ -31,5 +31,9 @@ class MainFragment : Fragment() {
         imageLabelingButton.setOnClickListener {
             findNavController().navigate(R.id.action_mainFragment_to_imageLabelingFragment)
         }
+        objectDetectionAndTrackingButton.setOnClickListener {
+            findNavController()
+                .navigate(R.id.action_mainFragment_to_objectDetectionAndTrackingFragment)
+        }
     }
 }

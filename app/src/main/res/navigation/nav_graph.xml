@@ -21,6 +21,9 @@
         <action
             android:id="@+id/action_mainFragment_to_imageLabelingFragment"
             app:destination="@id/imageLabelingFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_objectDetectionAndTrackingFragment"
+            app:destination="@id/objectDetectionAndTrackingFragment" />
     </fragment>
 
     <fragment
@@ -39,4 +42,8 @@
         android:id="@+id/imageLabelingFragment"
         android:name="jp.cordea.mlkitdemo.ImageLabelingFragment"
         tools:layout="@layout/fragment_image_labeling" />
+    <fragment
+        android:id="@+id/objectDetectionAndTrackingFragment"
+        android:name="jp.cordea.mlkitdemo.ObjectDetectionAndTrackingFragment"
+        tools:layout="@layout/fragment_object_detection_and_tracking" />
 </navigation>
