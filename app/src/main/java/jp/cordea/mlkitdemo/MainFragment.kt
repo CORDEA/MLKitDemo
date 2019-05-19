@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_main.*
 
 class MainFragment : Fragment() {
@@ -20,22 +19,21 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        textRecognitionButton.setOnClickListener {
-            findNavController().navigate(R.id.action_mainFragment_to_textRecognitionFragment)
-        }
-        faceDetectionButton.setOnClickListener {
-            findNavController().navigate(R.id.action_mainFragment_to_faceDetectionFragment)
-        }
-        barcodeScanningButton.setOnClickListener {
-            findNavController().navigate(R.id.action_mainFragment_to_barcodeScanningFragment)
-        }
-        imageLabelingButton.setOnClickListener {
-            findNavController().navigate(R.id.action_mainFragment_to_imageLabelingFragment)
-        }
-        objectDetectionAndTrackingButton.setOnClickListener {
-            findNavController()
-                .navigate(R.id.action_mainFragment_to_objectDetectionAndTrackingFragment)
-        }
+        textRecognitionButton.setOnClickListener(
+            Navigation.createNavigateOnClickListener(R.id.textRecognitionFragment)
+        )
+        faceDetectionButton.setOnClickListener(
+            Navigation.createNavigateOnClickListener(R.id.faceDetectionFragment)
+        )
+        barcodeScanningButton.setOnClickListener(
+            Navigation.createNavigateOnClickListener(R.id.barcodeScanningFragment)
+        )
+        imageLabelingButton.setOnClickListener(
+            Navigation.createNavigateOnClickListener(R.id.imageLabelingFragment)
+        )
+        objectDetectionAndTrackingButton.setOnClickListener(
+            Navigation.createNavigateOnClickListener(R.id.objectDetectionAndTrackingFragment)
+        )
         landmarkRecognitionButton.setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.landmarkRecognitionFragment)
         )

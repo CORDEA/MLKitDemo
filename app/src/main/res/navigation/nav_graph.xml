@@ -8,24 +8,7 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="jp.cordea.mlkitdemo.MainFragment"
-        tools:layout="@layout/fragment_main">
-        <action
-            android:id="@+id/action_mainFragment_to_textRecognitionFragment"
-            app:destination="@id/textRecognitionFragment" />
-        <action
-            android:id="@+id/action_mainFragment_to_faceDetectionFragment"
-            app:destination="@id/faceDetectionFragment" />
-        <action
-            android:id="@+id/action_mainFragment_to_barcodeScanningFragment"
-            app:destination="@id/barcodeScanningFragment" />
-        <action
-            android:id="@+id/action_mainFragment_to_imageLabelingFragment"
-            app:destination="@id/imageLabelingFragment" />
-        <action
-            android:id="@+id/action_mainFragment_to_objectDetectionAndTrackingFragment"
-            app:destination="@id/objectDetectionAndTrackingFragment" />
-    </fragment>
-
+        tools:layout="@layout/fragment_main" />
     <fragment
         android:id="@+id/textRecognitionFragment"
         android:name="jp.cordea.mlkitdemo.TextRecognitionFragment"
