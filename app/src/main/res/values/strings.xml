@@ -9,4 +9,5 @@
     <string name="landmark_recognition">Landmark Recognition</string>
     <string name="language_identification">Language Identification</string>
     <string name="choose_button">Choose</string>
+    <string name="identify_button">Identify</string>
 </resources>
