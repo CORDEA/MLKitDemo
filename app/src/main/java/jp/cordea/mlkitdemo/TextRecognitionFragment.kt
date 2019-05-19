@@ -1,7 +1,6 @@
 package jp.cordea.mlkitdemo
 
 
-import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -10,14 +9,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import com.google.firebase.ml.vision.FirebaseVision
 import com.google.firebase.ml.vision.common.FirebaseVisionImage
 import kotlinx.android.synthetic.main.fragment_text_recognition.*
 
 class TextRecognitionFragment : Fragment() {
-    companion object {
-        private const val REQUEST_CODE = 1
-    }
+    private val uiBinder = ImageChoosableUiBinder(this)
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,20 +25,17 @@ class TextRecognitionFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        chooseButton.setOnClickListener {
-            startActivityForResult(createImageChooserIntent(), REQUEST_CODE)
-        }
+        uiBinder.onResult.observe(this, Observer {
+            when (it) {
+                is ImageChoosableUiBinder.Result.ReceivedLocalImage -> handleImage(it.uri)
+            }
+        })
+        uiBinder.bind(chooseButton)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        val uri = data?.data ?: return
-        if (resultCode != Activity.RESULT_OK) {
-            return
-        }
-        if (requestCode == REQUEST_CODE) {
-            handleImage(uri)
-        }
+        uiBinder.handleActivityResult(requestCode, resultCode, data)
     }
 
     private fun handleImage(uri: Uri) {
