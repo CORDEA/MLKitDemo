@@ -46,4 +46,8 @@
         android:id="@+id/objectDetectionAndTrackingFragment"
         android:name="jp.cordea.mlkitdemo.ObjectDetectionAndTrackingFragment"
         tools:layout="@layout/fragment_object_detection_and_tracking" />
+    <fragment
+        android:id="@+id/landmarkRecognitionFragment"
+        android:name="jp.cordea.mlkitdemo.LandmarkRecognitionFragment"
+        tools:layout="@layout/fragment_landmark_recognition" />
 </navigation>

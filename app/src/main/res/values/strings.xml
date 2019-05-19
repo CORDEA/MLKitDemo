@@ -6,5 +6,6 @@
     <string name="barcode_scanning">Barcode Scanning</string>
     <string name="image_labeling">Image labeling</string>
     <string name="object_detection_and_tracking">Object Detection and Tracking</string>
+    <string name="landmark_recognition">Landmark Recognition</string>
     <string name="choose_button">Choose</string>
 </resources>
