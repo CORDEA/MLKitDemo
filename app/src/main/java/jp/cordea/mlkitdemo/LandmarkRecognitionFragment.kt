@@ -9,6 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import com.google.firebase.ml.vision.FirebaseVision
+import com.google.firebase.ml.vision.common.FirebaseVisionImage
 import kotlinx.android.synthetic.main.fragment_landmark_recognition.*
 
 class LandmarkRecognitionFragment : Fragment() {
@@ -36,5 +38,11 @@ class LandmarkRecognitionFragment : Fragment() {
     }
 
     private fun handleImage(uri: Uri) {
+        val image = FirebaseVisionImage.fromFilePath(requireContext(), uri)
+        val detector = FirebaseVision.getInstance().visionCloudLandmarkDetector
+        detector.detectInImage(image)
+            .addOnSuccessListener {
+            }
+            .addOnFailureListener { it.printStackTrace() }
     }
 }
