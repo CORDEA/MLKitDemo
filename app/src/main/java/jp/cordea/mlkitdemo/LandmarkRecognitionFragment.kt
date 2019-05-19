@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.google.firebase.ml.vision.FirebaseVision
@@ -43,9 +44,15 @@ class LandmarkRecognitionFragment : Fragment() {
     }
 
     private fun handleImage(uri: Uri) {
+        progressBar.isVisible = true
+        contentGroup.isVisible = false
         val image = FirebaseVisionImage.fromFilePath(requireContext(), uri)
         val detector = FirebaseVision.getInstance().visionCloudLandmarkDetector
         detector.detectInImage(image)
+            .addOnCompleteListener {
+                progressBar.isVisible = false
+                contentGroup.isVisible = true
+            }
             .addOnSuccessListener { result ->
                 groupAdapter.clear()
                 groupAdapter.addAll(result.map { SimpleTextItem(SimpleTextItemModel(it.landmark)) })
