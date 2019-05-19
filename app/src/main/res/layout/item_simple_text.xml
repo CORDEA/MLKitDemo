@@ -5,7 +5,7 @@
 
         <variable
             name="model"
-            type="jp.cordea.mlkitdemo.ImageLabelingItemModel" />
+            type="jp.cordea.mlkitdemo.SimpleTextItemModel" />
     </data>
 
     <TextView

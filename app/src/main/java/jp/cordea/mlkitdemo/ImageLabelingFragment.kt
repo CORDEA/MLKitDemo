@@ -50,7 +50,7 @@ class ImageLabelingFragment : Fragment() {
             .addOnSuccessListener { result ->
                 groupAdapter.clear()
                 groupAdapter.addAll(
-                    result.map { ImageLabelingItem(ImageLabelingItemModel(it.text)) }
+                    result.map { SimpleTextItem(SimpleTextItemModel(it.text)) }
                 )
             }
             .addOnFailureListener { it.printStackTrace() }
