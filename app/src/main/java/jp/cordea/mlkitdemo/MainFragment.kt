@@ -39,5 +39,8 @@ class MainFragment : Fragment() {
         landmarkRecognitionButton.setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.landmarkRecognitionFragment)
         )
+        languageIdentificationButton.setOnClickListener(
+            Navigation.createNavigateOnClickListener(R.id.languageIdentificationFragment)
+        )
     }
 }

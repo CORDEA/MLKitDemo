@@ -67,9 +67,20 @@
         android:id="@+id/landmarkRecognitionButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:text="@string/landmark_recognition"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/languageIdentificationButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/objectDetectionAndTrackingButton" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/languageIdentificationButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/language_identification"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/landmarkRecognitionButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>

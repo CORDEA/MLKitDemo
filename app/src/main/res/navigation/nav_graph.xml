@@ -50,4 +50,8 @@
         android:id="@+id/landmarkRecognitionFragment"
         android:name="jp.cordea.mlkitdemo.LandmarkRecognitionFragment"
         tools:layout="@layout/fragment_landmark_recognition" />
+    <fragment
+        android:id="@+id/languageIdentificationFragment"
+        android:name="jp.cordea.mlkitdemo.LanguageIdentificationFragment"
+        tools:layout="@layout/fragment_language_identification" />
 </navigation>
